@@ -12,24 +12,23 @@ using namespace std;
 \param [in] data The data set that will be searched
 \returns location of key if found or -1 if not found
 */
-int linearSearch(auto data, auto key)   //prototype
+void selectionSort(auto &data, auto key)   //prototype
 {
 	int length = data.size();
 	for (int i=0; i < length; i++)
 	{
-		int min = 1; 		//New
+		int min = i; 		//New
 		for (int j = i+1; j < length; j++)
 		{
 			if (data[j] < data[min])
 			min = j;
 		}
 		
-		
-		if (int indexMin != 1){
+		//if (indexMin != i ){
 		swap (data[i], data[min]);
 	}
 	}
-}
+
 		//if (data[i] == key)
 		//{ 
 		//	return i;
@@ -72,7 +71,7 @@ int main()
  
     while(search_key != "#")//perform searches until sentinel entered
     {
-        result = linearSearch(inputs,search_key);
+        result = selectionSort(inputs,search_key);
 
         cout<<"  '"<<search_key<<"' was ";
 
